@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Sans+SC:wght@400;700;900&display=swap');
+
+html {
+    --font-size: 5rem;
+    --gap: 5rem;
+}
+
 body {
     padding: 1rem;
     margin: 0;
@@ -17,15 +24,18 @@ textarea {
 }
 
 .background {
-    background-color: black;
+    background-color: greenyellow;
     width: 1280px;
     height: 320px;
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 3rem;
+    font-family: "Noto Sans JP", "Noto Sans SC" , sans-serif;
+    font-weight: 900;
+    font-size: var(--font-size);
     overflow: visible;
-    color: white;
-    padding: 1rem;
+    color: black;
+    padding: 12rem;
+    text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
+    box-sizing: content-box;
+    white-space: nowrap;
 }
 
 .middle {
@@ -34,19 +44,19 @@ textarea {
     justify-content: center;
     height: 100%;
     width: 100%;
-    gap: 2rem;
+    gap: var(--gap);
 }
 
 .left {
     display: flex;
     justify-content: left;
-    height: 2rem;
+    height: var(--gap);
 }
 
 .right {
     display: flex;
     justify-content: right;
-    height: 2rem;
+    height: var(--gap);
 }
 
 .hidden {
