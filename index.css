@@ -1,0 +1,54 @@
+body {
+    padding: 1rem;
+    margin: 0;
+}
+
+.page {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+}
+
+textarea {
+    width: 1280px;
+}
+
+.background {
+    background-color: black;
+    width: 1280px;
+    height: 320px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    overflow: visible;
+    color: white;
+    padding: 1rem;
+}
+
+.middle {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    gap: 2rem;
+}
+
+.left {
+    display: flex;
+    justify-content: left;
+    height: 2rem;
+}
+
+.right {
+    display: flex;
+    justify-content: right;
+    height: 2rem;
+}
+
+.hidden {
+    opacity: 0;
+}
