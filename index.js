@@ -17,19 +17,17 @@ let isLeft = true;
 window.addEventListener("keydown", (evt) => {
     if (evt.key === "ArrowRight") {
         if (isLeft) {
-            leftPos = forward(leftPos, rightPos, left);
+            [leftPos, isLeft] = forward(leftPos, rightPos, left);
         } else {
-            rightPos = forward(rightPos, leftPos, right);
+            [rightPos, isLeft] = forward(rightPos, leftPos, right);
         }
-        isLeft = !isLeft;
     }
     if (evt.key === "ArrowLeft") {
         if (!isLeft) {
-            leftPos = backward(leftPos, rightPos, left);
+            [leftPos, isLeft] = backward(leftPos, rightPos, left);
         } else {
-            rightPos = backward(rightPos, leftPos, right);
+            [rightPos, isLeft] = backward(rightPos, leftPos, right);
         }
-        isLeft = !isLeft;
     }
     if (evt.key === "ArrowUp") {
         if (left.classList.contains("hidden")) {
@@ -47,16 +45,16 @@ window.addEventListener("keydown", (evt) => {
     }
 })
 
-function forward(pos1, pos2, node) {
+function forward(pos1, pos2, node, isLeft) {
     const temp = pos1;
     pos1 = pos2 + 1;
     if (pos1 < lyrics.length) {
         node.innerText = lyrics[pos1];
-    } else {
-        pos1 = temp;
-        node.innerText = "";
+        return [pos1, !isLeft];
     }
-    return pos1;
+    pos1 = temp;
+    node.innerText = "";
+    return [pos1, isLeft];
 }
 
 function backward(pos1, pos2, node) {
@@ -64,9 +62,9 @@ function backward(pos1, pos2, node) {
     pos1 = pos2 - 1;
     if (pos1 >= 0) {
         node.innerText = lyrics[pos1];
-    } else {
-        pos1 = temp;
-        node.innerText = "";
+        return [pos1, !isLeft];
     }
-    return pos1;
+    pos1 = temp;
+    node.innerText = "";
+    return [pos1, isLeft];
 }
