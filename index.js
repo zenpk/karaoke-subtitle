@@ -17,16 +17,16 @@ let isLeft = true;
 window.addEventListener("keydown", (evt) => {
     if (evt.key === "ArrowRight") {
         if (isLeft) {
-            [leftPos, isLeft] = forward(leftPos, rightPos, left);
+            [leftPos, isLeft] = forward(leftPos, rightPos, left, isLeft);
         } else {
-            [rightPos, isLeft] = forward(rightPos, leftPos, right);
+            [rightPos, isLeft] = forward(rightPos, leftPos, right, isLeft);
         }
     }
     if (evt.key === "ArrowLeft") {
-        if (!isLeft) {
-            [leftPos, isLeft] = backward(leftPos, rightPos, left);
+        if (isLeft) {
+            [leftPos, isLeft] = backward(leftPos, rightPos, left, isLeft);
         } else {
-            [rightPos, isLeft] = backward(rightPos, leftPos, right);
+            [rightPos, isLeft] = backward(rightPos, leftPos, right, isLeft);
         }
     }
     if (evt.key === "ArrowUp") {
@@ -57,7 +57,7 @@ function forward(pos1, pos2, node, isLeft) {
     return [pos1, isLeft];
 }
 
-function backward(pos1, pos2, node) {
+function backward(pos1, pos2, node, isLeft) {
     const temp = pos1;
     pos1 = pos2 - 1;
     if (pos1 >= 0) {
