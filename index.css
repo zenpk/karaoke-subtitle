@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Sans+SC:wght@400;700;900&display=swap');
 
-html {
+:root {
     --font-size: 5rem;
     --gap: 5rem;
 }
@@ -27,7 +27,7 @@ textarea {
     background-color: greenyellow;
     width: 1280px;
     height: 320px;
-    font-family: "Noto Sans JP", "Noto Sans SC" , sans-serif;
+    font-family: "Noto Sans JP", "Noto Sans SC", sans-serif;
     font-weight: 900;
     font-size: var(--font-size);
     overflow: visible;
@@ -36,6 +36,12 @@ textarea {
     text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff;
     box-sizing: content-box;
     white-space: nowrap;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .middle {

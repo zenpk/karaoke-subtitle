@@ -68,3 +68,23 @@ function backward(pos1, pos2, node, isLeft) {
     node.innerText = "";
     return [pos1, isLeft];
 }
+
+const root = document.documentElement;
+
+function changeFontSize(delta) {
+    let fontSize = root.style.getPropertyValue("--font-size");
+    if (fontSize === "") {
+        fontSize = "5rem";
+    }
+    let number = +fontSize.split("rem")[0] + delta;
+    root.style.setProperty("--font-size", `${number}rem`);
+    root.style.setProperty("--gap", `${number}rem`);
+}
+
+function incFontSize() {
+    changeFontSize(1);
+}
+
+function decFontSize() {
+    changeFontSize(-1);
+}
