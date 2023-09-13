@@ -1,6 +1,6 @@
 Easily make karaoke subtitles.
 
-Navigate the lyrics using arrow keys
+Navigate the lyrics using ArrowLeft & ArrowRight, toggle display using ArrowUp & ArrowDown.
 
 ![screenshot](./screenshot3.png)
 
