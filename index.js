@@ -74,7 +74,7 @@ const root = document.documentElement;
 function changeFontSize(delta) {
     let fontSize = root.style.getPropertyValue("--font-size");
     if (fontSize === "") {
-        fontSize = "5rem";
+        fontSize = "3rem";
     }
     let number = +fontSize.split("rem")[0] + delta;
     root.style.setProperty("--font-size", `${number}rem`);
